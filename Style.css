@@ -1,0 +1,232 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
+:root {
+    --bg-color:#392620; /* marrom */
+    --bg-color2:#c0c0c0; /*cinza*/
+    --bg-color3:#000000;  /* preto */
+    --color:#ffffff; /* branco */
+}
+.titles{
+    padding:3rem;
+    text-align: center;
+    letter-spacing:1rem;
+    color: ;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem;
+    border-bottom:4px solid #c08457;
+    background-color:var(--bg-color);
+}
+
+header img{
+    width:25%;
+    height:100%;
+}
+
+#lenguage-area select, option{
+    -webkit-appearance: none;
+    border:none;
+    outline:none ;
+    color:var(--color);
+    background-color: transparent;
+}
+#slide-area{
+    position:relative;
+    overflow: hidden;
+    height:75vh;
+}
+
+#slide-area img{
+    opacity:0;
+    width:100vw;
+    height:75vh;
+    position:absolute;
+    transition:0.8s ease-in-out;
+}
+
+.btn-slide{
+    position: absolute;
+    width:25px;
+    height:70px;
+    border:none;
+    outline:none;
+    background-color:var(--bg-color);
+    z-index:1;
+    bottom:35vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#btnNext{
+    right:0;
+}
+
+#btnPrev{
+    left:0;
+}
+
+.active-img{
+    opacity:1 !important;
+}
+#load-area{
+    display:flex;
+    width:500px;
+    gap:1rem;
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform: translateX(-50%);
+}
+#load-area span{
+    flex:1;
+    position: relative;
+    overflow: hidden;
+    height:5px;
+    border-radius:1px;
+    background-color:#c0c0c0;
+    overflow: hidden;
+}
+#load-area > span.active-load::after{
+    content:'';
+    position:absolute;
+    width:80px;
+    height:5px;
+    background-color:#fff;
+    transform: translateX(-100%);
+    animation: loadAnimation 5s forwards linear;
+}
+@keyframes loadAnimation {
+    to{
+        transform: initial;
+    }
+}
+
+#games-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1.5rem;
+    padding-bottom:5rem;
+}
+
+.game-card{
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+    align-items:center;
+}
+
+.game-card img{
+    width:350px;
+    box-shadow:box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.game-card p{
+    text-align:center;
+    overflow-wrap: break-word;
+    font-size:0.8rem;
+    font-weight:400;
+}
+
+#midia-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2rem;
+    padding-bottom:4rem;
+}
+#midia-area img{
+    width:6%;
+}  
+#footer-one{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    padding:2rem;
+    background-color:var(--bg-color2);
+}
+
+#footer-one img:nth-child(1){
+    width:80px;
+}
+
+#footer-one img:nth-child(2){
+    width:53px;
+}
+
+#footer-two{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem;
+    background-color:var(--bg-color3);
+}
+#footer-two div{
+    display:flex;
+    align-items:center;
+    gap:1.2rem;
+}
+#footer-two div > img{
+    width:40%;
+}
+#politic-privacity{
+    position:relative;
+}
+#politic-privacity::before{
+    content:'';
+    position:absolute;
+    width: 0; 
+    height: 0; 
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid yellow;
+    bottom:4px;
+    left:-8px;
+}
+
+#footer-two p{
+    font-size:0.6rem;
+    color:var(--color);
+    text-align:right;
+}
+#footer-two p > a{
+    color:yellow;
+    text-decoration: none;
+}
+
+@media(max-width: 900px){
+    #slide-area{
+        height:30vh;
+    }
+    #slide-area img{
+        height:30vh;
+    }
+    .btn-slide{
+        bottom:12vh;
+    }
+    .titles{
+        letter-spacing:0.6rem;
+    }
+    #footer-two img{
+        width:100%;
+    }
+    #footer-two div{
+        flex-direction:column;
+    }
+    #footer-two{
+        flex-direction:column;
+        align-items: center;
+        justify-content:center;
+        gap:1rem;
+    }
+    #footer-two p{
+        text-align:center;
+    }
+}
